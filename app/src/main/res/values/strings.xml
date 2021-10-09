@@ -21,4 +21,5 @@
     <string name="perfil">Perfil</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buscar_en_la_comunidad">Buscar en la comunidad</string>
 </resources>

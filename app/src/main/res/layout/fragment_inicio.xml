@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".InicioFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/white">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="#7E7E7E"
+                app:errorTextColor="#FF0000"
+                android:padding="10dp">
+                <EditText android:id="@+id/editTextCorreoLogin"
+                    android:layout_width="match_parent"
+                    android:hint="@string/buscar_en_la_comunidad"
+                    android:inputType="text"
+                    android:textColorHint="#0000"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box_shadow"
+                    android:importantForAutofill="no"
+                    android:drawableStart="@drawable/ic_outline_search_24"
+                    android:drawablePadding="5dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-</FrameLayout>
+</ScrollView>
