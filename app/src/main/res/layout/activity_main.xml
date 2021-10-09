@@ -77,15 +77,16 @@
             android:textStyle="bold"
             app:useMaterialThemeColors="true"
             android:textColorHint="#616161"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLoginAcceder"
+            android:background="@drawable/btn_personalizado"
+            android:text="@string/acceder"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_margin="15dp"/>
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/btnAcceder"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/btn_personalizado"-->
-<!--            android:text="@string/acceder"-->
-<!--            android:textStyle="bold"-->
-<!--            android:layout_margin="15dp"-->
-<!--            android:textColor="@color/white"/>-->
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>
