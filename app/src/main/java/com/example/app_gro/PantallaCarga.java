@@ -18,6 +18,6 @@ public class PantallaCarga extends AppCompatActivity {
             public void run() {
                 startActivity(new Intent(PantallaCarga.this, MainActivity.class));
             }
-        }, 2500);
+        }, 2200);
     }
 }
