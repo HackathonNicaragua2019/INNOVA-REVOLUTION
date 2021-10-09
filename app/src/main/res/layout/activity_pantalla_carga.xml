@@ -3,36 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F2F2F2F2"
+    android:layout_gravity="center_vertical"
+    android:background="#E5E8E8"
     android:layout_height="match_parent"
     tools:context=".PantallaCarga">
-    <ImageView android:id="@+id/bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/bgd"/>
     <ImageView android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintVertical_bias="0"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/innvarevolution"/>
-    <ImageView android:id="@+id/nombre_app"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/name_app"/>
+        android:src="@drawable/icon_carga"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
