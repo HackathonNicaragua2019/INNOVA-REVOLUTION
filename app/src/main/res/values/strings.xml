@@ -9,4 +9,6 @@
     <string name="acceder">ACCEDER</string>
     <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
     <string name="O">Ó</string>
+    <string name="reg_strate">Regístrate</string>
+    <string name="no_tienes_una_cuenta">¿No tienes una cuenta?</string>
 </resources>
