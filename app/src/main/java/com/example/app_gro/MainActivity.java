@@ -8,16 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    AppCompatButton btnRegistrar;
+    AppCompatButton btnRegistrar, btnIniciarSesion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnRegistrar = findViewById(R.id.btnLoginRegister);
+        btnIniciarSesion = findViewById(R.id.btnLoginAcceder);
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Registrar.class));
+            }
+        });
+        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Inicio.class));
             }
         });
     }
