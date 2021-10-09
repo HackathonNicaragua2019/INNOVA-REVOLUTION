@@ -5,4 +5,5 @@
     <string name="accede_a_tu_cuenta_para_continuar">ACCEDE A TU CUENTA PARA CONTINUAR</string>
     <string name="correo_electr_nico">Correo electrónico</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="recordarme">Recordarme</string>
 </resources>

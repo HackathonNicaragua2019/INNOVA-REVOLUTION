@@ -67,24 +67,25 @@
                 android:drawablePadding="5dp"
                 android:autofillHints="emailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
-<!--        <com.google.android.material.textfield.TextInputLayout-->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recordarme"
+            android:textSize="15sp"
+            android:layout_gravity="start"
+            app:buttonTint="#434343"
+            android:textStyle="bold"
+            app:useMaterialThemeColors="true"
+            android:textColorHint="#616161"/>
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/btnAcceder"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content"-->
-<!--            app:boxBackgroundMode="outline"-->
-<!--            app:boxBackgroundColor="#00000000"-->
-<!--            app:hintTextColor="@color/black"-->
-<!--            app:boxStrokeColor="#00000000"-->
-<!--            app:errorTextColor="#FF0000"-->
-<!--            android:padding="10dp">-->
-<!--        <EditText android:id="@+id/editTextPasswdLogin"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:hint="@string/contrase_a"-->
-<!--            android:inputType="textPassword"-->
-<!--            android:background="@drawable/box_shadow"-->
-<!--            android:textColorHint="@color/white"-->
-<!--            android:drawableStart="@drawable/ic_baseline_lock_24"-->
-<!--            android:drawablePadding="5dp"-->
-<!--            android:importantForAutofill="no"-->
-<!--            android:layout_height="wrap_content"/>-->
+<!--            android:background="@drawable/btn_personalizado"-->
+<!--            android:text="@string/acceder"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:textColor="@color/white"/>-->
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>
