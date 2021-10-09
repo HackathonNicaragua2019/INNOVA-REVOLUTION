@@ -11,4 +11,8 @@
     <string name="O">Ó</string>
     <string name="reg_strate">Regístrate</string>
     <string name="no_tienes_una_cuenta">¿No tienes una cuenta?</string>
+    <string name="crea_una_cuenta">Crea una cuenta</string>
+    <string name="por_favor_llene_todos_los_campos">Por favor llene todos los campos</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
 </resources>
