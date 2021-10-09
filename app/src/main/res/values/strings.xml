@@ -16,4 +16,7 @@
     <string name="nombre_completo">Nombre completo</string>
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
     <string name="registrarse">Registrarse</string>
+    <string name="inicio">Inicio</string>
+    <string name="comunidad">Comunidad</string>
+    <string name="perfil">Perfil</string>
 </resources>
