@@ -1,5 +1,6 @@
 package com.example.app_gro;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,8 +19,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 public class Registrar extends AppCompatActivity {
     EditText username, email, passwd, confirmPasswd;
@@ -90,6 +101,47 @@ public class Registrar extends AppCompatActivity {
     }
 
     private void authenticationFirebase(GoogleSignInAccount account) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            if(Objects.requireNonNull(task.getResult().getAdditionalUserInfo()).isNewUser()){
+                                assert user != null;
+                                String uid = user.getUid();
+                                String correo = user.getEmail();
+                                String nombre = user.getDisplayName();
+                                HashMap<Object, String> datoUsuario = new HashMap<>();
+                                datoUsuario.put("uid", uid);
+                                datoUsuario.put("nombre", nombre);
+                                datoUsuario.put("correo", correo);
+                                //datoUsuario.put("pass", pass);
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference reference = database.getReference("USUARIOS_APP");
+                                reference.child(uid).setValue(datoUsuario);
+                            }
+                            startActivity(new Intent(Registrar.this, Inicio.class));
+                        }else{
+                            dialogNoInicio();
+                        }
+                    }
+                });
+    }
+
+    private void dialogNoInicio() {
+        Button okNoInicio;
+        dialog.setContentView(R.layout.no_session);
+        okNoInicio = dialog.findViewById(R.id.okInicio);
+        okNoInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.setCancelable(false);
+        dialog.show();
     }
 
     private void registrar(String correo, String pass) {
