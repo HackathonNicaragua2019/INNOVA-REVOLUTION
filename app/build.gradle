@@ -4,6 +4,7 @@ plugins {
 
 android {
     compileSdk 30
+    buildFeatures{viewBinding true}
 
     defaultConfig {
         applicationId "com.example.app_gro"

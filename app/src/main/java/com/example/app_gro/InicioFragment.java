@@ -1,10 +1,15 @@
 package com.example.app_gro;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +29,10 @@ public class InicioFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    ImageView imageView;
+    private static final int PICK_IMAGE = 100;
+    Uri imageUri;
+    ImageView foto_gallery;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -63,16 +72,22 @@ public class InicioFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ImageView imageView;
+
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
-        RelativeLayout relativeLayout = view.findViewById(R.id.rlTomarFoto);
-        relativeLayout.setOnClickListener(new View.OnClickListener() {
+        AppCompatImageButton imageButton2 = view.findViewById(R.id.imgButtonReciente2);
+        AppCompatImageButton imageButton1 = view.findViewById(R.id.imgButtonReciente1);
+        imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent());
+                startActivity(new Intent(view.getContext(), ResultadoDiagnostico.class));
             }
         });
-        imageView = view.findViewById(R.id.imgDiagnostico);
+        imageButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(view.getContext(), ResultadoDiagnostico.class));
+            }
+        });
         return view;
     }
 }

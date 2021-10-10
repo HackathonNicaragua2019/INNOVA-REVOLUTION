@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -55,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("INICIA SESIÓN");
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(false);
+        AppCompatTextView textView = findViewById(R.id.u);
         btnRegistrar = findViewById(R.id.btnLoginRegister);
         btnIniciarSesion = findViewById(R.id.btnLoginAcceder);
         imgButtonGoogle = findViewById(R.id.imgLoginButtonGoogle);
         passwd = findViewById(R.id.editTextPasswdLogin);
         correo = findViewById(R.id.editTextCorreoLogin);
+        //correo.setText();
         progressDialog = new ProgressDialog(MainActivity.this);
         crearSolicitud();
         dialog = new Dialog(MainActivity.this);

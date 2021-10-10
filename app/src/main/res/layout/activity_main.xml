@@ -22,6 +22,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/u"
                 android:text="@string/acceso"
                 android:textSize="18sp"
                 android:layout_margin="10dp"
