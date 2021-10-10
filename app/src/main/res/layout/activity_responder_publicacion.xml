@@ -126,14 +126,6 @@
                         </RelativeLayout>
 
                         <TextView
-                            style="@style/TextAppearance.AppCompat.Title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/t_tulo"
-                            android:textColor="#434343"
-                            android:textStyle="bold" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/relleno"
@@ -154,9 +146,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/box_shadow"
-                                android:drawableStart="@drawable/ic_baseline_send_24"
+                                android:drawableEnd="@drawable/ic_baseline_send_24"
                                 android:drawablePadding="5dp"
-                                android:hint="@string/escribir_respuesta"
+                                android:hint="@string/comentar"
                                 android:importantForAutofill="no"
                                 android:inputType="textPersonName"
                                 android:textColorHint="#000" />
@@ -169,14 +161,68 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:elevation="6dp"
                 android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     tools:ignore="UselessParent">
+                    <ImageView
+                        android:id="@+id/imgPerfil3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/login" />
+
+                    <RelativeLayout android:layout_toEndOf="@id/imgPerfil3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/box_shadow">
+                        <TextView
+                            android:id="@+id/txtNameCard3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/francisco_garc_a"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="RelativeOverlap" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtNameCard3"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="@string/relleno"
+                            android:textColor="#434343" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="80dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="80sp"
+                                android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/like" />
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/dislike"
+                                android:layout_alignParentEnd="true"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -184,95 +230,7 @@
                         android:layout_margin="10dp"
                         android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
 
-                            <ImageView
-                                android:id="@+id/imgPerfil2"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:contentDescription="@string/app_name"
-                                android:src="@drawable/login" />
-
-                            <TextView
-                                android:id="@+id/txtNameCard2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignBaseline="@id/imgPerfil2"
-                                android:layout_marginStart="5dp"
-                                android:layout_toEndOf="@id/imgPerfil2"
-                                android:text="@string/francisco_garc_a"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
-                                tools:ignore="RelativeOverlap" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/txtNameCard2"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginTop="9dp"
-                                android:layout_toEndOf="@id/imgPerfil2"
-                                android:text="@string/hace_4_horas_nicaragua"
-                                android:textSize="12sp" />
-                        </RelativeLayout>
-
-                        <TextView
-                            style="@style/TextAppearance.AppCompat.Title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/t_tulo"
-                            android:textColor="#434343"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/relleno"
-                            android:textColor="#434343" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgFavorite2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_toStartOf="@id/txtLike2"
-                                android:src="@drawable/ic_baseline_favorite_24" />
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgHeartOff2"
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="13dp"
-                                android:src="@drawable/heart_off" />
-
-                            <TextView
-                                android:id="@+id/txtDislike2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="17dp"
-                                android:text="@string/_1"
-                                android:textSize="12sp"
-                                tools:ignore="RelativeOverlap" />
-
-                            <TextView
-                                android:id="@+id/txtLike2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="17dp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff2"
-                                android:text="@string/_13"
-                                android:textSize="12sp" />
-                        </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
                 </RelativeLayout>
             </LinearLayout>
@@ -287,110 +245,74 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:elevation="6dp"
                 android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     tools:ignore="UselessParent">
+                    <ImageView
+                        android:id="@+id/imgPerfil4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/login" />
+
+                    <RelativeLayout android:layout_toEndOf="@id/imgPerfil4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/box_shadow">
+
+                        <TextView
+                            android:id="@+id/txtNameCard4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jackson_montenegro"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="RelativeOverlap" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtNameCard4"
+                            android:text="@string/relleno"
+                            android:layout_margin="2dp"
+                            android:textColor="#434343" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="80dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="80sp"
+                                android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/like" />
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/dislike"
+                                android:layout_alignParentEnd="true"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
 
-                            <ImageView
-                                android:id="@+id/imgPerfil3"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:contentDescription="@string/app_name"
-                                android:src="@drawable/login" />
-
-                            <TextView
-                                android:id="@+id/txtNameCard3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignBaseline="@id/imgPerfil3"
-                                android:layout_marginStart="5dp"
-                                android:layout_toEndOf="@id/imgPerfil3"
-                                android:text="@string/sergio_duarte"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
-                                tools:ignore="RelativeOverlap" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/txtNameCard3"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginTop="9dp"
-                                android:layout_toEndOf="@id/imgPerfil3"
-                                android:text="@string/hace_4_horas_nicaragua"
-                                android:textSize="12sp" />
-                        </RelativeLayout>
-
-                        <TextView
-                            style="@style/TextAppearance.AppCompat.Title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/t_tulo"
-                            android:textColor="#434343"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/relleno"
-                            android:textColor="#434343" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgFavorite3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_toStartOf="@id/txtLike3"
-                                android:src="@drawable/ic_baseline_favorite_24" />
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgHeartOff3"
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="13dp"
-                                android:src="@drawable/heart_off" />
-
-                            <TextView
-                                android:id="@+id/txtDislike3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="17dp"
-                                android:text="@string/_1"
-                                android:textSize="12sp"
-                                tools:ignore="RelativeOverlap" />
-
-                            <TextView
-                                android:id="@+id/txtLike3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="17dp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff3"
-                                android:text="@string/_13"
-                                android:textSize="12sp" />
-                        </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
                 </RelativeLayout>
             </LinearLayout>
@@ -401,116 +323,72 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="15dp"
                 android:background="@color/black" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:elevation="6dp"
                 android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    tools:ignore="UselessParent">
+                    <ImageView
+                        android:id="@+id/imgPerfil2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/login" />
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
+                    <RelativeLayout android:layout_toEndOf="@id/imgPerfil2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/imgPerfil4"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:contentDescription="@string/app_name"
-                                android:src="@drawable/login" />
-
-                            <TextView
-                                android:id="@+id/txtNameCard4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignBaseline="@id/imgPerfil4"
-                                android:layout_marginStart="5dp"
-                                android:layout_toEndOf="@id/imgPerfil4"
-                                android:text="@string/noel_rocha"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
-                                tools:ignore="RelativeOverlap" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/txtNameCard4"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginTop="9dp"
-                                android:layout_toEndOf="@id/imgPerfil4"
-                                android:text="@string/hace_4_horas_nicaragua"
-                                android:textSize="12sp" />
-                        </RelativeLayout>
-
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/box_shadow">
                         <TextView
-                            style="@style/TextAppearance.AppCompat.Title"
+                            android:id="@+id/txtNameCard2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/t_tulo"
-                            android:textColor="#434343"
-                            android:textStyle="bold" />
+                            android:layout_marginStart="5dp"
+                            android:text="@string/noel_rocha"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="RelativeOverlap" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/txtNameCard2"
                             android:text="@string/relleno"
+                            android:layout_margin="2dp"
                             android:textColor="#434343" />
-
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="80dp">
 
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgFavorite4"
-                                android:layout_width="wrap_content"
+                                android:layout_width="80sp"
                                 android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
                                 android:layout_marginTop="15dp"
-                                android:layout_toStartOf="@id/txtLike4"
-                                android:src="@drawable/ic_baseline_favorite_24" />
-
+                                android:src="@drawable/like" />
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgHeartOff4"
                                 android:layout_width="18dp"
                                 android:layout_height="18dp"
-                                android:layout_alignParentEnd="true"
                                 android:layout_marginTop="15dp"
-                                android:layout_marginEnd="13dp"
-                                android:src="@drawable/heart_off" />
-
-                            <TextView
-                                android:id="@+id/txtDislike4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="17dp"
-                                android:text="@string/_1"
-                                android:textSize="12sp"
-                                tools:ignore="RelativeOverlap" />
-
-                            <TextView
-                                android:id="@+id/txtLike4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="17dp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff4"
-                                android:text="@string/_13"
-                                android:textSize="12sp" />
+                                android:src="@drawable/dislike"
+                                android:layout_alignParentEnd="true"/>
                         </RelativeLayout>
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    </RelativeLayout>
+
                 </RelativeLayout>
             </LinearLayout>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
-    </RelativeLayout>
+</RelativeLayout>

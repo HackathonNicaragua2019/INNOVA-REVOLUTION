@@ -10,17 +10,15 @@
         android:id="@+id/btnFloating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foregroundTintMode="screen"
         android:src="@drawable/editar"
-        android:layout_alignParentBottom="true"
         app:backgroundTint="#E5E8E8"
         android:background="@drawable/box_shadow_button"
-        android:layout_alignParentEnd="true"
         android:layout_margin="10dp"
         app:elevation="6dp"
-        android:outlineSpotShadowColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:contentDescription="@string/nueva_publicaci_n"
-        android:layout_gravity="bottom|end" />
+        tools:ignore="RelativeOverlap" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

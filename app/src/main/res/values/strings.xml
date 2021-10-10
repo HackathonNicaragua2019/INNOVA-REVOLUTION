@@ -39,7 +39,7 @@
     <string name="todo">TODO</string>
     <string name="jackson_montenegro">Jackson Montenegro</string>
     <string name="hace_4_horas_nicaragua">Hace 4 horas - Nicaragua</string>
-    <string name="relleno">¿Que opinan de la decoración que tengo en mi jardín? \n \n Tengo muchos tipos de plantas ornamentales y me gustaría saber cuales es tu favorita</string>
+    <string name="relleno">¿Que opinan de la decoración que tengo en mi jardín? \n \n Tengo muchos tipos de plantas ornamentales y me gustaría saber cuales es tu favorita \n \n</string>
     <string name="_19_respuestas">19 Respuestas</string>
     <string name="_19">19</string>
     <string name="_3_2k">3.2k</string>
@@ -97,4 +97,5 @@ localizados cuando sea posible.</string>
     <string name="soluci_n">Solución</string>
     <string name="aplicaci_n_de_cryptobug_l">Aplicación de Cryptobug-L</string>
     <string name="cryptobug">Esparce el material sobre bloques de lana de roca para una introducción general o en cajas de aplicación (Diboxes) cerca de un foco localizado o en el mismo. Colócalo entre las hojas (infectadas). Aplica el producto a última hora de la tarde. Condiciones de manejo óptimo de Cryptobug-L</string>
+    <string name="comentar">Comentar</string>
 </resources>
