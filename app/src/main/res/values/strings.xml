@@ -64,4 +64,16 @@
     <string name="s_ntomas">Síntomas</string>
     <string name="relleno2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in libero massa. Suspendisse molestie elementum placerat.</string>
     <string name="soluci_n">Solución</string>
+    <string name="_22">22 %</string>
+    <string name="_34">34 %</string>
+    <string name="cochinillas">COCHINILLAS</string>
+    <string name="cochinillas_desc">Provocan la deformación y caída de hojas. También crean manchas blancas o marrones y decoloran la superficie</string>
+    <string name="pulgones">PULGONES</string>
+    <string name="desc_pulgones">Estos deforman las hojas y los brotes de las plantas. Para ello, clavan su pico y abseroben la sabia de las especies.</string>
+    <string name="mosca_blanca">MOSCA BLANCA</string>
+    <string name="desc_mosa">Este tipo de plaga es muy peligrosa tmabién, puesto que logra que las hojas pierdan color y las llenan de una sustancia pegajosa</string>
+    <string name="gusanos">GUSANOS</string>
+    <string name="desc_gusano">Para comprobar si los tienes en tu jardín, inspecciona con cuidado el suelo. Puedes escarvar con los dedos para descubrir alguno.</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="_10_10_2021">10/10/2021</string>
 </resources>

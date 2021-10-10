@@ -1,14 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".EstadisticaFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:context=".EstadisticaFragment">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:hintTextColor="@color/black"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxStrokeColor="#7E7E7E"
+                app:errorTextColor="#FF0000"
+                android:padding="10dp">
+                <EditText android:id="@+id/editTextCorreoLogin"
+                    android:layout_width="match_parent"
+                    android:hint="@string/buscar_en_la_comunidad"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#0000"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:drawableStart="@drawable/ic_outline_search_24"
+                    android:drawablePadding="5dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnFiltrar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_filter_alt_24"
+                    android:background="@color/white"
+                    android:layout_margin="10dp"/>
+                <TextView android:layout_toEndOf="@+id/btnFiltrar"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filtrar"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_10_10_2021"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:stretchColumns="*">
+                <TableRow tools:ignore="UselessParent"
+                    android:layout_margin="15dp">
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_height="200dp"
+                        android:layout_width="150dp"
+                        android:src="@drawable/estadistica"
+                        android:scaleType="fitStart"
+                        android:layout_gravity="end"
+                        android:background="@color/white"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="6dp"
+                        android:background="@drawable/box_shadow"
+                        android:layout_gravity="center"
+                        android:padding="10dp">
 
-</FrameLayout>
+                        <View
+                            android:id="@+id/rojo"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="#FF0000" />
+                        <TextView android:id="@+id/uno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_22"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginStart="25dp"
+                            android:layout_toEndOf="@id/rojo"/>
+
+                        <View
+                            android:id="@+id/celeste"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@id/rojo"
+                            android:layout_marginTop="25dp"
+                            android:background="#5759DC" />
+                        <TextView android:id="@+id/dos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_34"
+                            android:layout_marginTop="28dp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginStart="25dp"
+                            android:layout_toEndOf="@id/celeste"
+                            android:layout_below="@id/uno"/>
+
+                        <View
+                            android:id="@+id/amarillo"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@id/celeste"
+                            android:layout_marginTop="25dp"
+                            android:background="#FDD835" />
+                        <TextView android:id="@+id/tres"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_34"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginStart="25dp"
+                            android:layout_toEndOf="@id/amarillo"
+                            android:layout_marginTop="28dp"
+                            android:layout_below="@id/dos"/>
+
+                        <View
+                            android:id="@+id/cafe"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@id/amarillo"
+                            android:layout_marginTop="25dp"
+                            android:background="#573A23" />
+                        <TextView android:id="@+id/cuatro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_22"
+                            android:layout_marginTop="32dp"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="25dp"
+                            android:layout_toEndOf="@id/cafe"
+                            android:textStyle="bold"
+                            android:layout_below="@id/tres"/>
+                    </RelativeLayout>
+                </TableRow>
+            </TableLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="6dp"
+                android:background="@drawable/box_shadow"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cochinillas"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/cochinillas_desc" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="#FF0000"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20sp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pulgones"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/desc_pulgones"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="#5759DC"/>
+                    <TextView android:layout_marginTop="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mosca_blanca"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/desc_mosa"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="#FDD835"/>
+
+                    <TextView android:layout_marginTop="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gusanos"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/desc_gusano"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="#573A23"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>
