@@ -14,12 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/manchas_negras_en_las_hojas"
-                android:textStyle="bold"
-                style="@style/TextAppearance.AppCompat.Title"/>
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgDiagnostico"
                 android:layout_width="match_parent"
@@ -34,46 +28,88 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:background="@drawable/box_diagnostico">
-                    <TextView android:id="@+id/txtSintomas"
+                    android:padding="15dp">
+                    <TextView android:id="@+id/plaga"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/s_ntomas"
-                        android:textSize="20sp"
-                        android:layout_marginTop="10dp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
-                    <TextView android:layout_below="@id/txtSintomas"
-                        android:layout_width="wrap_content"
-                        android:id="@+id/txtSintomas2"
-                        android:layout_height="wrap_content"
-                        android:text="@string/relleno2"
-                        app:drawableStartCompat="@drawable/ic_baseline_chevron_right_24" />
+                        android:text="@string/manchas_negras_en_las_hojas"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"/>
+                    <View
+                        android:layout_width="200dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:layout_below="@id/plaga"
+                        android:background="#008F39"/>
 
-                    <TextView android:layout_below="@id/txtSintomas2"
-                        android:id="@+id/txtSintomas4"
+                    <TextView
+                        android:id="@+id/txtSintomas"
                         android:layout_width="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/diagn_stico"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/plagas"
+                        android:scaleType="centerCrop"
+                        android:layout_marginStart="5dp"
+                        android:background="@color/white"
+                        android:layout_marginTop="25dp"
+                        android:layout_toEndOf="@id/txtSintomas"/>
+
+                    <TextView
+                        android:id="@+id/txtSintomas2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSintomas"
                         android:text="@string/relleno2"
-                        app:drawableStartCompat="@drawable/ic_baseline_chevron_right_24" />
-                    <TextView android:layout_below="@id/txtSintomas4"
+                        android:textSize="16sp" />
+
+                    <TextView
                         android:id="@+id/txtSintomas5"
                         android:layout_width="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSintomas2"
+                        android:layout_marginTop="15dp"
                         android:text="@string/soluci_n"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableStartCompat="@drawable/ic_baseline_medication_24" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="155dp"
+                        android:layout_toEndOf="@id/txtSintomas5"
+                        android:background="@color/white"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/hospital" />
                     <TextView android:layout_below="@id/txtSintomas5"
                         android:id="@+id/txtSintomas6"
                         android:layout_width="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/relleno2"
-                        app:drawableStartCompat="@drawable/ic_baseline_chevron_right_24" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="@string/aplicaci_n_de_cryptobug_l"/>
+
+                    <TextView android:id="@+id/txtSintomas7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSintomas6"
+                        android:text="@string/cryptobug" />
+                    <TextView android:layout_below="@id/txtSintomas7"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="18sp"
+                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/relleno4"/>
                 </RelativeLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>

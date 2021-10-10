@@ -10,7 +10,7 @@
         android:title="@string/comunidad"/>
     <item
         android:id="@+id/estadisticaNav"
-        android:icon="@drawable/barra_grafica"
+        android:icon="@drawable/growth"
         android:title="@string/estad_sticas"/>
     <item
         android:id="@+id/perfilNav"

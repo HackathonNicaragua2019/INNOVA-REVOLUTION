@@ -24,12 +24,13 @@
                 android:elevation="6dp"
                 android:padding="10dp"
                 android:background="@drawable/box_shadow">
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_outline_exit_to_app_24"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/box_shadow_button"/>
+                    android:background="#E5E8E8"
+                    android:src="@drawable/ic_outline_exit_to_app_24" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/cImage"
@@ -68,9 +69,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/publicaciones"
                 android:layout_marginTop="10dp"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:layout_below="@id/rImg"
                 android:layout_gravity="center"/>
+            <View
+                android:layout_width="90dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="#008F39"/>
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 android:layout_width="match_parent"
@@ -148,37 +154,19 @@
                                 android:layout_marginTop="15dp"
                                 android:text="@string/_19_respuestas"
                                 tools:ignore="RelativeOverlap" />
+
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgFavorite"
-                                android:layout_width="wrap_content"
+                                android:layout_width="80sp"
                                 android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/ic_baseline_favorite_24"
-                                android:layout_toStartOf="@id/txtLike"/>
+                                android:src="@drawable/like" />
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="18dp"
-                                android:id="@+id/imgHeartOff"
                                 android:layout_height="18dp"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/heart_off"
-                                android:layout_marginEnd="13dp"
+                                android:src="@drawable/dislike"
                                 android:layout_alignParentEnd="true"/>
-                            <TextView android:id="@+id/txtDislike"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_19"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_alignParentEnd="true"
-                                tools:ignore="RelativeOverlap" />
-                            <TextView android:id="@+id/txtLike"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_3_2k"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff"/>
 
                         </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>

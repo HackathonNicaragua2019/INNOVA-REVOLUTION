@@ -130,36 +130,19 @@
                                 tools:ignore="RelativeOverlap" />
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/imgFavorite"
-                                android:layout_width="wrap_content"
+                                android:layout_width="80sp"
                                 android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toStartOf="@id/imgHeartOff"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/ic_baseline_favorite_24"
-                                android:layout_toStartOf="@id/txtLike"/>
+                                android:src="@drawable/like" />
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="18dp"
                                 android:id="@+id/imgHeartOff"
                                 android:layout_height="18dp"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/heart_off"
-                                android:layout_marginEnd="13dp"
+                                android:src="@drawable/dislike"
                                 android:layout_alignParentEnd="true"/>
-                            <TextView android:id="@+id/txtDislike"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_19"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_alignParentEnd="true"
-                                tools:ignore="RelativeOverlap" />
-                            <TextView android:id="@+id/txtLike"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_3_2k"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff"/>
-
                         </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
                 </LinearLayout>
@@ -242,37 +225,19 @@
                                 android:layout_marginTop="15dp"
                                 android:text="@string/_19_respuestas"
                                 tools:ignore="RelativeOverlap" />
+
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgFavorite2"
-                                android:layout_width="wrap_content"
+                                android:layout_width="80sp"
                                 android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/ic_baseline_favorite_24"
-                                android:layout_toStartOf="@id/txtLike2"/>
+                                android:src="@drawable/like" />
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="18dp"
-                                android:id="@+id/imgHeartOff2"
                                 android:layout_height="18dp"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/heart_off"
-                                android:layout_marginEnd="13dp"
+                                android:src="@drawable/dislike"
                                 android:layout_alignParentEnd="true"/>
-                            <TextView android:id="@+id/txtDislike2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_19"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_alignParentEnd="true"
-                                tools:ignore="RelativeOverlap" />
-                            <TextView android:id="@+id/txtLike2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_3_2k"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff2"/>
 
                         </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -357,37 +322,19 @@
                                 android:layout_marginTop="15dp"
                                 android:text="@string/_19_respuestas"
                                 tools:ignore="RelativeOverlap" />
+
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/imgFavorite3"
-                                android:layout_width="wrap_content"
+                                android:layout_width="80sp"
                                 android:layout_height="18dp"
+                                android:layout_alignParentEnd="true"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/ic_baseline_favorite_24"
-                                android:layout_toStartOf="@id/txtLike3"/>
+                                android:src="@drawable/like" />
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="18dp"
-                                android:id="@+id/imgHeartOff3"
                                 android:layout_height="18dp"
                                 android:layout_marginTop="15dp"
-                                android:src="@drawable/heart_off"
-                                android:layout_marginEnd="13dp"
+                                android:src="@drawable/dislike"
                                 android:layout_alignParentEnd="true"/>
-                            <TextView android:id="@+id/txtDislike3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_19"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_alignParentEnd="true"
-                                tools:ignore="RelativeOverlap" />
-                            <TextView android:id="@+id/txtLike3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_3_2k"
-                                android:layout_marginTop="17dp"
-                                android:textSize="12sp"
-                                android:layout_marginEnd="3dp"
-                                android:layout_toStartOf="@id/imgHeartOff3"/>
 
                         </RelativeLayout>
                     </androidx.appcompat.widget.LinearLayoutCompat>
