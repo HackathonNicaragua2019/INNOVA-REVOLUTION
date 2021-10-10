@@ -76,7 +76,7 @@ public class ComunidadFragment extends Fragment {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(v.getContext(), ResponderPublicacion.class));
             }
         });
         // Inflate the layout for this fragment
