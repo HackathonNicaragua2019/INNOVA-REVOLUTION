@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_gro">
         <activity
+            android:name=".ResultadoDiagnostico"
+            android:exported="true" />
+        <activity
             android:name=".ResponderPublicacion"
             android:exported="true" />
         <activity
