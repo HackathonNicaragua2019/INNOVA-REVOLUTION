@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2F2"
+        android:background="@color/white"
         tools:context=".PerfilFragment">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_height="match_parent"
@@ -69,6 +69,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 android:layout_width="match_parent"
+                android:background="@drawable/box_shadow"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp">
 
