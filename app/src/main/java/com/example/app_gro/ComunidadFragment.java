@@ -3,12 +3,14 @@ package com.example.app_gro;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
@@ -68,6 +70,13 @@ public class ComunidadFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), Publicacion.class));
+            }
+        });
+        MaterialCardView cardView = view.findViewById(R.id.card);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         // Inflate the layout for this fragment
