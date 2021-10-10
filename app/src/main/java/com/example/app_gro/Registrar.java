@@ -20,6 +20,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -145,5 +146,43 @@ public class Registrar extends AppCompatActivity {
     }
 
     private void registrar(String correo, String pass) {
+        progressDialog.setTitle("Registrando");
+        progressDialog.setMessage("Por favor espere...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+        firebaseAuth.createUserWithEmailAndPassword(correo, pass)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            progressDialog.dismiss();
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            assert user != null;
+                            String uid = user.getUid();
+                            String correo = email.getText().toString();
+                            String pass = passwd.getText().toString();
+                            String nombre = username.getText().toString();
+                            HashMap<Object,String> datoUsuario = new HashMap<>();
+                            datoUsuario.put("uid", uid);
+                            datoUsuario.put("nombre", nombre);
+                            datoUsuario.put("correo", correo);
+                            datoUsuario.put("pass", pass);
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference reference = database.getReference("USUARIOS_APP");
+                            reference.child(uid).setValue(datoUsuario);
+                            Toast.makeText(Registrar.this, "¡Registro Exitoso!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Registrar.this, Inicio.class));
+                        }else {
+                            progressDialog.dismiss();
+                            Toast.makeText(Registrar.this, "¡Ha ocurrido un error!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
+                Toast.makeText(Registrar.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
