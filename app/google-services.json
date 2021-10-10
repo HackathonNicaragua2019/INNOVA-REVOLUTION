@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "610283412741",
+    "firebase_url": "https://appgro-hn2021-default-rtdb.firebaseio.com",
+    "project_id": "appgro-hn2021",
+    "storage_bucket": "appgro-hn2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610283412741:android:d0a8b00f5079f603b7eb6c",
+        "android_client_info": {
+          "package_name": "com.example.app_gro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610283412741-lcaff93qnuh5vv1lfp45lesgniu32kj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_gro",
+            "certificate_hash": "7ad60dbe7b0617fbd7ba9155feea330cebe6ebd1"
+          }
+        },
+        {
+          "client_id": "610283412741-nq22g5n7mpe7q84qi1fi8ju7rukqtetm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXn_FtUA--fM2qTQ5FYwfklv3ebPhdH3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610283412741-nq22g5n7mpe7q84qi1fi8ju7rukqtetm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

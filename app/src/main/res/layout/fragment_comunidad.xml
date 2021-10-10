@@ -58,7 +58,7 @@
                 android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_marginTop="8dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -169,8 +169,7 @@
                 android:id="@+id/card2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="6dp"
-                android:layout_margin="10dp">
+                android:elevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -285,8 +284,7 @@
                 android:id="@+id/card3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="6dp"
-                android:layout_margin="10dp">
+                android:elevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -396,9 +394,6 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
-
-
         </com.google.android.material.textfield.TextInputLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
