@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".InicioFragment">
-
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="@color/white">
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2F2"
+        tools:context=".InicioFragment">
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:gravity="start"
             android:orientation="vertical">
             <com.google.android.material.textfield.TextInputLayout
@@ -20,21 +21,288 @@
                 android:layout_height="wrap_content"
                 app:boxBackgroundMode="outline"
                 app:hintTextColor="@color/black"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
                 app:boxStrokeColor="#7E7E7E"
                 app:errorTextColor="#FF0000"
                 android:padding="10dp">
                 <EditText android:id="@+id/editTextCorreoLogin"
                     android:layout_width="match_parent"
                     android:hint="@string/buscar_en_la_comunidad"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:textColorHint="#0000"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/box_shadow"
                     android:importantForAutofill="no"
                     android:drawableStart="@drawable/ic_outline_search_24"
                     android:drawablePadding="5dp"/>
             </com.google.android.material.textfield.TextInputLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_shadow"
+                android:elevation="6dp"
+                android:padding="15dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rPE"
+                    android:layout_width="120dp"
+                    android:layout_height="95dp"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_horizontal"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/box_shadow_button"
+                    tools:ignore="UselessParent">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgPE"
+                        android:layout_width="50dp"
+                        android:padding="8dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/box_shadow_png"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/plagas" />
+
+                    <TextView
+                        android:id="@+id/txtPE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgPE"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/plagas_y_enfermedades"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rCC"
+                    android:layout_width="120dp"
+                    android:layout_height="95dp"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center_horizontal"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/box_shadow_button"
+                    tools:ignore="RelativeOverlap">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgCC"
+                        android:layout_width="50dp"
+                        android:padding="8dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/box_shadow_png"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/planta" />
+
+                    <TextView
+                        android:id="@+id/txtCC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgCC"
+                        android:text="@string/consejos_de_cultivos"
+                        android:textAlignment="center"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rInstrucciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_shadow"
+                android:elevation="6dp"
+                android:padding="15dp"
+                android:layout_margin="10dp">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instrucciones"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <TableLayout android:id="@+id/tblInstrucciones"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/box_shadow"
+                    android:stretchColumns="*"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content">
+                    <TableRow tools:ignore="UselessParent"
+                        android:gravity="center">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/scan"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:src="@drawable/right"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/phone"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:src="@drawable/right"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/medicine"/>
+                    </TableRow>
+                </TableLayout>
+                <TableLayout android:id="@+id/tblLabels"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/box_shadow"
+                    android:stretchColumns="3"
+                    android:layout_below="@id/tblInstrucciones"
+                    android:layout_height="wrap_content">
+                    <TableRow tools:ignore="UselessParent"
+                        android:gravity="center">
+                        <TextView android:layout_marginStart="6dp"
+                            android:layout_column="0"
+                            android:layout_width="wrap_content"
+                            android:textAlignment="center"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tomar_una_foto"
+                            android:textColor="#6E6C6C"
+                            android:textSize="13sp" />
+                        <TextView android:layout_marginEnd="6dp"
+                            android:layout_column="3"
+                            android:layout_width="wrap_content"
+                            android:textAlignment="center"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mira_el_diagn_stico"
+                            android:textColor="#6E6C6C"
+                            android:textSize="13sp" />
+                        <TextView
+                            android:layout_marginEnd="15dp"
+                            android:layout_width="wrap_content"
+                            android:textAlignment="center"
+                            android:layout_height="wrap_content"
+                            android:text="@string/obt_n_el_tratamiento"
+                            android:textColor="#6E6C6C"
+                            android:textSize="13sp" />
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_height="50dp"
+                android:background="@drawable/box_shadow_button"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:elevation="6dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/myImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="100dp"
+                    android:src="@drawable/camera"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/myImageViewText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/myImageView"
+                    android:text="@string/tomar_una_foto"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <TextView android:layout_margin="12dp"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:text="@string/fotos_anteriores"/>
+            <RelativeLayout
+                android:layout_height="90dp"
+                android:background="@drawable/box_shadow"
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:elevation="6dp"
+                android:layout_margin="10dp">
+                <ImageView
+                    android:id="@+id/imgPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:src="@drawable/upload"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgPhoto"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/subir_foto"
+                    android:textAlignment="center"
+                    android:textColor="#6E6C6C" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rClima"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_shadow"
+                android:elevation="6dp"
+                android:padding="15dp"
+                android:layout_margin="10dp">
+                <TextView android:id="@+id/txtGrados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_29"
+                    android:textSize="40sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <TextView android:id="@+id/txtCiudad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtGrados"
+                    android:text="@string/managua_nicaragua"
+                    android:textSize="12sp"
+                    android:textColor="#6E6C6C"
+                    tools:ignore="SmallSp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtCiudad"
+                    android:text="@string/buen_d_a_para_sembrar_tus_semillas"
+                    android:textColor="#458133"
+                    android:textSize="17sp"
+                    android:layout_marginTop="5dp"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgSol"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/sol"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignEnd="@id/txtGrados"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgSol"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/soleado"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"/>
+            </RelativeLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </ScrollView>

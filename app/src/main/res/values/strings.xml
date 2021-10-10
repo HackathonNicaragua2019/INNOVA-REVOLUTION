@@ -22,4 +22,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="buscar_en_la_comunidad">Buscar en la comunidad</string>
+    <string name="estad_sticas">Estadísticas</string>
+    <string name="plagas_y_enfermedades">Plagas y \n Enfermedades</string>
+    <string name="consejos_de_cultivos">Consejos de \n cultivos</string>
+    <string name="instrucciones">Instrucciones</string>
+    <string name="tomar_una_foto">Tomar una foto</string>
+    <string name="mira_el_diagn_stico">Mira el diagnóstico</string>
+    <string name="obt_n_el_tratamiento">Obtén el \n tratamiento</string>
+    <string name="fotos_anteriores">Fotos anteriores</string>
+    <string name="subir_foto">Subir foto</string>
+    <string name="_29">29°</string>
+    <string name="managua_nicaragua">Managua - Nicaragua</string>
+    <string name="buen_d_a_para_sembrar_tus_semillas">!Buen día para sembrar tus semillas!</string>
+    <string name="soleado">Soleado</string>
 </resources>

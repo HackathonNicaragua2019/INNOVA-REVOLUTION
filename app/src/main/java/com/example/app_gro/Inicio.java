@@ -17,6 +17,7 @@ public class Inicio extends AppCompatActivity {
     InicioFragment inicioFragment = new InicioFragment();
     ComunidadFragment comunidadFragment = new ComunidadFragment();
     PerfilFragment perfilFragment = new PerfilFragment();
+    EstadisticaFragment estadisticaFragment = new EstadisticaFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,9 @@ public class Inicio extends AppCompatActivity {
                     return true;
                 case R.id.perfilNav:
                     loadFragment(perfilFragment);
+                    return true;
+                case R.id.estadisticaNav:
+                    loadFragment(estadisticaFragment);
                     return true;
             }
             return false;
