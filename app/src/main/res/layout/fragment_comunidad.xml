@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ComunidadFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnFloating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundTintMode="screen"
+        android:src="@drawable/editar"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="#E5E8E8"
+        android:background="@drawable/box_shadow_button"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        app:elevation="6dp"
+        android:outlineSpotShadowColor="@color/white"
+        android:contentDescription="@string/nueva_publicaci_n"
+        android:layout_gravity="bottom|end"/>
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2F2"
+        tools:context=".ComunidadFragment">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="#7E7E7E"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:errorTextColor="#FF0000"
+            android:padding="10dp">
+            <EditText android:id="@+id/editTextCorreoLogin"
+                android:layout_width="match_parent"
+                android:hint="@string/buscar_en_la_comunidad"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#000"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:drawableStart="@drawable/ic_outline_search_24"
+                android:drawablePadding="5dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</RelativeLayout>
