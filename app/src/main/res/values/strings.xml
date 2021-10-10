@@ -49,4 +49,8 @@
     <string name="entendido">Entendido</string>
     <string name="publicaciones">Publicaciones</string>
     <string name="editar">Editar</string>
+    <string name="a_adir_imagen">Añadir imagen</string>
+    <string name="t_tulo">Título</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="enviar">Enviar</string>
 </resources>
