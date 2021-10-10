@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/drawable/box_diagnostico.xml" value="0.23489583333333333" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/drawable/box_menu_bottom.xml" value="0.33055555555555555" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/drawable/box_shadow.xml" value="0.4036458333333333" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/activity_editar_perfil.xml" value="0.33" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/activity_publicacion.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/activity_registrar.xml" value="0.33" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/activity_responder_publicacion.xml" value="0.33" />
+        <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/activity_resultado_diagnostico.xml" value="0.33" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/fragment_comunidad.xml" value="0.25" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/fragment_estadistica.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Jackson/INNOVA-REVOLUTION/app/src/main/res/layout/fragment_inicio.xml" value="0.22826086956521738" />

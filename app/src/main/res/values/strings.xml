@@ -60,4 +60,8 @@
     <string name="_13">13</string>
     <string name="_1">1</string>
     <string name="sergio_duarte">Sergio Duarte</string>
+    <string name="manchas_negras_en_las_hojas">MANCHAS NEGRAS EN LAS HOJAS</string>
+    <string name="s_ntomas">Síntomas</string>
+    <string name="relleno2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in libero massa. Suspendisse molestie elementum placerat.</string>
+    <string name="soluci_n">Solución</string>
 </resources>

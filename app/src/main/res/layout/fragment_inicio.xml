@@ -198,7 +198,7 @@
                     </TableRow>
                 </TableLayout>
             </RelativeLayout>
-            <RelativeLayout
+            <RelativeLayout android:id="@+id/rlTomarFoto"
                 android:layout_height="50dp"
                 android:background="@drawable/box_shadow_button"
                 android:gravity="center_vertical"
