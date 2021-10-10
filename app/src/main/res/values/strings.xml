@@ -53,4 +53,7 @@
     <string name="t_tulo">Título</string>
     <string name="descripci_n">Descripción</string>
     <string name="enviar">Enviar</string>
+    <string name="idioma">Idioma</string>
+    <string name="pa_s">País</string>
+    <string name="guardar_cambios">Guardar cambios</string>
 </resources>

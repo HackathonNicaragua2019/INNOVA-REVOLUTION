@@ -1,9 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPerfil">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".Publicacion">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="6dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/fui_transparent"
+                android:layout_centerInParent="true"
+                android:background="@color/fui_transparent"
+                android:src="@drawable/ic_baseline_image_24"
+                android:contentDescription="@string/todo" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/img" />
+        </RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#00000000"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="#00000000"
+            app:errorTextColor="#FF0000"
+            android:padding="10dp">
+            <EditText android:id="@+id/editTextEditarNombre"
+                android:layout_width="match_parent"
+                android:hint="@string/nombre_completo"
+                android:inputType="textPersonName"
+                android:textColorHint="#000"
+                android:background="@drawable/box_shadow"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:drawableStart="@drawable/ic_outline_person_24"
+                android:drawablePadding="5dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#00000000"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="#00000000"
+            app:errorTextColor="#FF0000"
+            android:padding="10dp">
+            <EditText android:id="@+id/editTextEditarDesc"
+                android:layout_width="match_parent"
+                android:hint="@string/descripci_n"
+                android:inputType="text"
+                android:textColorHint="#000"
+                android:background="@drawable/box_shadow"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:drawableStart="@drawable/ic_baseline_insert_comment_24"
+                android:drawablePadding="5dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#00000000"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="#00000000"
+            app:errorTextColor="#FF0000"
+            android:padding="10dp">
+            <EditText android:id="@+id/editTextEditarIdioma"
+                android:layout_width="match_parent"
+                android:hint="@string/idioma"
+                android:inputType="textPersonName"
+                android:textColorHint="#000"
+                android:background="@drawable/box_shadow"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:drawableStart="@drawable/ic_baseline_language_24"
+                android:drawablePadding="5dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#00000000"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="#00000000"
+            app:errorTextColor="#FF0000"
+            android:padding="10dp">
+            <EditText android:id="@+id/editTextEditarPais"
+                android:layout_width="match_parent"
+                android:hint="@string/pa_s"
+                android:inputType="textPersonName"
+                android:textColorHint="#000"
+                android:background="@drawable/box_shadow"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:drawableStart="@drawable/ic_baseline_location_city_24"
+                android:drawablePadding="5dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnEditarGuardar"
+            android:background="@drawable/btn_personalizado"
+            android:text="@string/guardar_cambios"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_margin="15dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
