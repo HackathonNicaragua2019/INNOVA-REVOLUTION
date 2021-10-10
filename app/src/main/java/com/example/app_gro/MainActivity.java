@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegistrar = findViewById(R.id.btnLoginRegister);
         btnIniciarSesion = findViewById(R.id.btnLoginAcceder);
         imgButtonGoogle = findViewById(R.id.imgLoginButtonGoogle);
-        passwd = findViewById(R.id.txtPasswdLogin);
+        passwd = findViewById(R.id.editTextPasswdLogin);
         correo = findViewById(R.id.editTextCorreoLogin);
         progressDialog = new ProgressDialog(MainActivity.this);
         crearSolicitud();
@@ -70,28 +70,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Registrar.class));
             }
         });
-        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email =correo.getText().toString();
-                String pass = passwd.getText().toString();
-                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    correo.setError("Correo Inválido");
-                    correo.setFocusable(true);
-                }else if(pass.length() < 6){
-                    passwd.setError("La contraseña debe contener al menos 6 dígitos");
-                    passwd.setFocusable(true);
-                }else{
-                    loginUser(email, pass);
-                }
+        btnIniciarSesion.setOnClickListener(v -> {
+            //Toast.makeText(this, "lsdmfjklsdjf", Toast.LENGTH_SHORT).show();
+            String email = correo.getText().toString();
+            String pass = passwd.getText().toString();
+            if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                correo.setError("Correo Inválido");
+                correo.setFocusable(true);
+            }else if(pass.length() < 6){
+                passwd.setError("La contraseña debe contener al menos 6 dígitos");
+                passwd.setFocusable(true);
+            }else{
+                loginUser(email, pass);
             }
+
         });
-        imgButtonGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
+        imgButtonGoogle.setOnClickListener(v -> signIn());
     }
 
     private void signIn() {

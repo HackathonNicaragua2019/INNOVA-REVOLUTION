@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 app:boxBackgroundMode="outline"
                 android:padding="10dp">
-                <EditText android:id="@+id/txtCorreoLogin"
+                <EditText android:id="@+id/editTextCorreoLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/correo_electr_nico"
@@ -59,7 +59,7 @@
                 app:boxBackgroundMode="outline"
                 app:passwordToggleEnabled="true"
                 android:padding="10dp">
-                <EditText android:id="@+id/txtPasswdLogin"
+                <EditText android:id="@+id/editTextPasswdLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/contrase_a"
