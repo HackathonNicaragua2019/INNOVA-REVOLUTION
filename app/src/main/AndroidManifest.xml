@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_gro">
         <activity
+            android:name=".EditarPerfil"
+            android:exported="true" />
+        <activity
             android:name=".Publicacion"
             android:exported="true" />
         <activity
