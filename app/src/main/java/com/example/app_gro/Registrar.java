@@ -2,6 +2,7 @@ package com.example.app_gro;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -47,6 +48,11 @@ public class Registrar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Regístrate");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         imgButtonGoogle = findViewById(R.id.imgButtonGoogleRegister);
         registerUser = findViewById(R.id.btnRegisterUser);
         email = findViewById(R.id.editTextCorreoRegister);

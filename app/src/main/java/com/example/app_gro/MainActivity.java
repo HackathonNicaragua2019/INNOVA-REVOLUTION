@@ -2,6 +2,7 @@ package com.example.app_gro;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     AppCompatButton btnRegistrar, btnIniciarSesion;
     ImageButton imgButtonGoogle, imgButtonFacebook;
     EditText passwd, correo;
-    private FirebaseAuth firebaseAuth;
+    FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     Dialog dialog;
     private GoogleSignInClient signInClient;
@@ -49,15 +50,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("INICIA SESIÓN");
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(false);
         btnRegistrar = findViewById(R.id.btnLoginRegister);
         btnIniciarSesion = findViewById(R.id.btnLoginAcceder);
         imgButtonGoogle = findViewById(R.id.imgLoginButtonGoogle);
         passwd = findViewById(R.id.txtPasswdLogin);
         correo = findViewById(R.id.editTextCorreoLogin);
-        firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(MainActivity.this);
-        dialog = new Dialog(MainActivity.this);
         crearSolicitud();
+        dialog = new Dialog(MainActivity.this);
+        firebaseAuth = FirebaseAuth.getInstance();
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,5 +185,10 @@ public class MainActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         signInClient = GoogleSignIn.getClient(this, gso);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
     }
 }

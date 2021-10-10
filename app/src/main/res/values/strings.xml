@@ -45,4 +45,6 @@
     <string name="_3_2k">3.2k</string>
     <string name="francisco_garc_a">Francisco García</string>
     <string name="noel_rocha">Noel Rocha</string>
+    <string name="no_se_ha_podido_iniciar_sesi_n_revise_su_correo_o_contrase_a">No se ha podido iniciar sesión - Revise su correo o contraseña</string>
+    <string name="entendido">Entendido</string>
 </resources>
