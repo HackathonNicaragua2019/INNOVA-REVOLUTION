@@ -16,6 +16,7 @@
         android:layout_below="@id/container_fragment"/>
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container_fragment"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="695dp"/>
 </RelativeLayout>
