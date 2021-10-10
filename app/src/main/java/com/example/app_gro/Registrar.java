@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -53,6 +54,7 @@ public class Registrar extends AppCompatActivity {
         passwd = findViewById(R.id.editTextPassRegister);
         dialog = new Dialog(Registrar.this);
         confirmPasswd = findViewById(R.id.editTextConfirmPassRegister);
+        crearSolicitud();
         progressDialog = new ProgressDialog(Registrar.this);
         firebaseAuth = FirebaseAuth.getInstance();
         registerUser.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +83,14 @@ public class Registrar extends AppCompatActivity {
                 signIn();
             }
         });
+    }
+
+    private void crearSolicitud() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("610283412741-nq22g5n7mpe7q84qi1fi8ju7rukqtetm.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+        signInClient = GoogleSignIn.getClient(this, gso);
     }
 
     private void signIn() {
