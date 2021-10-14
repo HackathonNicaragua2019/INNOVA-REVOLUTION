@@ -46,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:hint="@string/buscar_en_la_comunidad"
                 android:inputType="textEmailAddress"
+                android:background="@drawable/box_shadow"
                 android:textColorHint="#000"
                 android:layout_height="wrap_content"
                 android:importantForAutofill="no"

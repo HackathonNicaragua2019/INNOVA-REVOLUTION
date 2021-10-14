@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App_gro</string>
+    <string name="app_name">APPGRO</string>
     <string name="logo_de_la_image">Logo de la image</string>
     <string name="acceso">ACCESO</string>
     <string name="accede_a_tu_cuenta_para_continuar">ACCEDE A TU CUENTA PARA CONTINUAR</string>
@@ -98,4 +98,6 @@ localizados cuando sea posible.</string>
     <string name="aplicaci_n_de_cryptobug_l">Aplicación de Cryptobug-L</string>
     <string name="cryptobug">Esparce el material sobre bloques de lana de roca para una introducción general o en cajas de aplicación (Diboxes) cerca de un foco localizado o en el mismo. Colócalo entre las hojas (infectadas). Aplica el producto a última hora de la tarde. Condiciones de manejo óptimo de Cryptobug-L</string>
     <string name="comentar">Comentar</string>
+    <string name="quieres_saber_donde_encontrar_estos_productos">¿Quieres saber donde encontrar estos productos?</string>
+    <string name="title_activity_ubicacion_productos">UbicacionProductos</string>
 </resources>

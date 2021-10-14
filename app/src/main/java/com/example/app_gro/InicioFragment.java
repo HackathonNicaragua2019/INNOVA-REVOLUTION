@@ -1,6 +1,7 @@
 package com.example.app_gro;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,8 +32,7 @@ public class InicioFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     ImageView imageView;
     private static final int PICK_IMAGE = 100;
-    Uri imageUri;
-    ImageView foto_gallery;
+    ProgressDialog progressDialog;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -79,7 +79,24 @@ public class InicioFragment extends Fragment {
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(view.getContext(), ResultadoDiagnostico.class));
+                progressDialog = new ProgressDialog(view.getContext());
+                progressDialog.setMessage("Analizando imagen..."); // Setting Message
+                progressDialog.setTitle("Por favor, espere..."); // Setting Title
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                progressDialog.show(); // Display Progress Dialog
+                progressDialog.setCancelable(false);
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                            progressDialog.dismiss();
+                            startActivity(new Intent(view.getContext(), ResultadoDiagnostico.class));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
             }
         });
         imageButton1.setOnClickListener(new View.OnClickListener() {
@@ -90,4 +107,5 @@ public class InicioFragment extends Fragment {
         });
         return view;
     }
+
 }

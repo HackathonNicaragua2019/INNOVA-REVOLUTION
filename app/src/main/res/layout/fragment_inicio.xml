@@ -33,6 +33,7 @@
                     android:hint="@string/buscar_en_la_comunidad"
                     android:inputType="textEmailAddress"
                     android:textColorHint="#0000"
+                    android:background="@drawable/box_shadow"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
                     android:drawableStart="@drawable/ic_outline_search_24"
