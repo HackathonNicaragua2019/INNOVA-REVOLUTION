@@ -1,30 +1,53 @@
 package com.example.app_gro;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorEventListener2;
 import android.hardware.SensorManager;
+import android.icu.text.TimeZoneFormat;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.zip.Inflater;
 
 /**
@@ -38,10 +61,14 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    ImageView imageView;
+    private final int SOLICITUD_TOMAR_FOTO = 1;
     private SensorManager sensorManager;
     private TextView grados;
+    public AppCompatImageButton imageButton1;
+    public RelativeLayout rlSubirFoto;
+    private final String permisoCamera = Manifest.permission.CAMERA;
     private Sensor pressure;
+    String urlFoto = "";
     private static final int PICK_IMAGE = 100;
     ProgressDialog progressDialog;
     View view;
@@ -89,9 +116,11 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_inicio, container, false);
         AppCompatImageButton imageButton2 = view.findViewById(R.id.imgButtonReciente2);
-        AppCompatImageButton imageButton1 = view.findViewById(R.id.imgButtonReciente1);
+         imageButton1 = view.findViewById(R.id.imgButtonReciente1);
         sensorManager = (SensorManager)view.getContext().getSystemService(Context.SENSOR_SERVICE);
         pressure = sensorManager.getDefaultSensor(Sensor.TYPE_TEMPERATURE, true);
+        rlSubirFoto = view.findViewById(R.id.rl1);
+        RelativeLayout tomarFoto = view.findViewById(R.id.rlTomarFoto);
         sensorManager.registerListener(this, pressure, SensorManager.SENSOR_DELAY_UI);
         grados = view.findViewById(R.id.txtGrados);
         imageButton2.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +145,44 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
             }
         });
         imageButton1.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ResultadoDiagnostico.class)));
+        tomarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //dispararIntentTomarFoto();
+                pedirPermisos();
+            }
+        });
         return view;
+    }
+    public void pedirPermisos(){
+        boolean proveerContexto = ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), permisoCamera);
+        if(proveerContexto){
+            solicitudPermiso();
+        }else{
+            solicitudPermiso();
+        }
+    }
+
+    private void solicitudPermiso() {
+        String permisoWriteStorage = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        String permisoReadStorage = Manifest.permission.READ_EXTERNAL_STORAGE;
+        String[] arrayPermisos = new String[]{permisoCamera, permisoReadStorage, permisoWriteStorage};
+        requestPermissions(arrayPermisos, SOLICITUD_TOMAR_FOTO);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
+                grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED){
+            try {
+                dispararIntentTomarFoto();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            Toast.makeText(getContext(), "No se ha otorgado permisos a la cámara", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -134,6 +200,60 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         Toast.makeText(view.getContext(), "OnAccurracy", Toast.LENGTH_SHORT).show();
+    }
+    public void dispararIntentTomarFoto() throws IOException {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(intent.resolveActivity(getContext().getPackageManager()) != null){
+            File archivoFoto = crearArchivoImagen();
+            if(archivoFoto != null){
+                Uri urlFotoUri = FileProvider.getUriForFile(getContext(), "com.example.app_gro", archivoFoto);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, urlFotoUri);
+                startActivityForResult(intent, SOLICITUD_TOMAR_FOTO);
+            }
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Activity.RESULT_OK){
+            //Log.d("ACTIVITY_RESULT", "Obtener imagen");
+//            assert data != null;
+//            Bundle extra = data.getExtras();
+//            Bitmap imageBitmap = (Bitmap) extra.get("data");
+            Uri uri = Uri.parse(urlFoto);
+            try {
+                InputStream stream = getContext().getContentResolver().openInputStream(uri);
+                Bitmap imageBitmap = BitmapFactory.decodeStream(stream);
+                imageButton1.setImageBitmap(imageBitmap);
+                agregarImagenGaleria();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        }else {
+            Log.d("ACTIVITY_RESULT", String.valueOf(resultCode));
+        }
+    }
+
+    public void agregarImagenGaleria(){
+        Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        File file = new File(urlFoto);
+        Uri uri = Uri.fromFile(file);
+        intent.setData(uri);
+        getContext().sendBroadcast(intent);
+    }
+
+    public File crearArchivoImagen() throws IOException {
+        @SuppressLint("SimpleDateFormat")
+        SimpleDateFormat timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String nombreArchivo = "JPEG" + timeStamp + "_";
+        //File directory = view.getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File directorio = Environment.getExternalStorageDirectory();
+        File dirPicture = new File(directorio.getAbsolutePath() + "/Pictures/");
+        File imagen = File.createTempFile(nombreArchivo, ".jpg", dirPicture);
+        urlFoto = "file://" + imagen.getAbsolutePath();
+        return imagen;
     }
 
     @Override
