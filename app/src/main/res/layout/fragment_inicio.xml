@@ -202,16 +202,17 @@
             <RelativeLayout android:id="@+id/rlTomarFoto"
                 android:layout_height="50dp"
                 android:background="@drawable/box_shadow_button"
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:elevation="6dp"
+                android:gravity="center"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:id="@+id/myImageView"
-                    android:layout_width="match_parent"
+                    android:layout_width="25dp"
                     android:layout_height="20dp"
-                    android:layout_marginEnd="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
                     android:src="@drawable/camera"
                     tools:ignore="ContentDescription" />
 
@@ -219,7 +220,8 @@
                     android:id="@+id/myImageViewText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@id/myImageView"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/myImageView"
                     android:text="@string/tomar_una_foto"
                     android:textColor="@color/white"
                     android:textSize="20sp"

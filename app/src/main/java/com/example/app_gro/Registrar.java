@@ -91,6 +91,11 @@ public class Registrar extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
     private void crearSolicitud() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("610283412741-nq22g5n7mpe7q84qi1fi8ju7rukqtetm.apps.googleusercontent.com")
