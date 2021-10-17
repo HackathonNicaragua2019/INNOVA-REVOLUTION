@@ -62,15 +62,19 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private final int SOLICITUD_TOMAR_FOTO = 1;
+    private final int SOLICITUD_SELECCIONAR_FOTO = 2;
     private SensorManager sensorManager;
     private TextView grados;
     public AppCompatImageButton imageButton1;
     public RelativeLayout rlSubirFoto;
     private final String permisoCamera = Manifest.permission.CAMERA;
+    String permisoWriteStorage = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+    String permisoReadStorage = Manifest.permission.READ_EXTERNAL_STORAGE;
     private Sensor pressure;
     String urlFoto = "";
     private static final int PICK_IMAGE = 100;
     ProgressDialog progressDialog;
+    AppCompatImageButton imageButton2;
     View view;
 
     // TODO: Rename and change types of parameters
@@ -115,8 +119,8 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_inicio, container, false);
-        AppCompatImageButton imageButton2 = view.findViewById(R.id.imgButtonReciente2);
-         imageButton1 = view.findViewById(R.id.imgButtonReciente1);
+        imageButton2 = view.findViewById(R.id.imgButtonReciente2);
+        imageButton1 = view.findViewById(R.id.imgButtonReciente1);
         sensorManager = (SensorManager)view.getContext().getSystemService(Context.SENSOR_SERVICE);
         pressure = sensorManager.getDefaultSensor(Sensor.TYPE_TEMPERATURE, true);
         rlSubirFoto = view.findViewById(R.id.rl1);
@@ -149,11 +153,35 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
             @Override
             public void onClick(View v) {
                 //dispararIntentTomarFoto();
-                pedirPermisos();
+                capturarFoto();
+            }
+        });
+        rlSubirFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionarFoto();
             }
         });
         return view;
     }
+
+    private void capturarFoto() {
+        pedirPermisos();
+    }
+
+    private void seleccionarFoto() {
+        pedirPermisosSeleccionarfoto();
+    }
+
+    private void pedirPermisosSeleccionarfoto() {
+        boolean proveerContexto = ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), permisoReadStorage);
+        if(proveerContexto){
+            solicitudPermisoSeleccionarFoto();
+        }else{
+            solicitudPermisoSeleccionarFoto();
+        }
+    }
+
     public void pedirPermisos(){
         boolean proveerContexto = ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), permisoCamera);
         if(proveerContexto){
@@ -169,20 +197,42 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
         String[] arrayPermisos = new String[]{permisoCamera, permisoReadStorage, permisoWriteStorage};
         requestPermissions(arrayPermisos, SOLICITUD_TOMAR_FOTO);
     }
+    private void solicitudPermisoSeleccionarFoto() {
+        String permisoReadStorage = Manifest.permission.READ_EXTERNAL_STORAGE;
+        String[] arrayPermisos = new String[]{permisoReadStorage};
+        requestPermissions(arrayPermisos, SOLICITUD_SELECCIONAR_FOTO);
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
-                grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED){
-            try {
-                dispararIntentTomarFoto();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else {
-            Toast.makeText(getContext(), "No se ha otorgado permisos a la cámara", Toast.LENGTH_SHORT).show();
+        switch (requestCode){
+            case SOLICITUD_TOMAR_FOTO:
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
+                        grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED){
+                    try {
+                        dispararIntentTomarFoto();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    Toast.makeText(getContext(), "No se han otorgado permisos para tomar foto", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case SOLICITUD_SELECCIONAR_FOTO:
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    dispararIntentSeleccionarFoto();
+                }else{
+                    Toast.makeText(getContext(), "No se han otorgado permisos para seleccionar una foto", Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
+    }
+
+    private void dispararIntentSeleccionarFoto() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(Intent.createChooser(intent, "Selecciona una foto"), SOLICITUD_SELECCIONAR_FOTO);
     }
 
     @SuppressLint("SetTextI18n")
@@ -216,24 +266,38 @@ public class InicioFragment extends Fragment implements SensorEventListener2 {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == Activity.RESULT_OK){
-            //Log.d("ACTIVITY_RESULT", "Obtener imagen");
-//            assert data != null;
-//            Bundle extra = data.getExtras();
-//            Bitmap imageBitmap = (Bitmap) extra.get("data");
-            Uri uri = Uri.parse(urlFoto);
-            try {
-                InputStream stream = getContext().getContentResolver().openInputStream(uri);
-                Bitmap imageBitmap = BitmapFactory.decodeStream(stream);
-                imageButton1.setImageBitmap(imageBitmap);
-                agregarImagenGaleria();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+        switch (requestCode){
+            case SOLICITUD_TOMAR_FOTO:
+                if(resultCode == Activity.RESULT_OK){
+                    Uri uri = Uri.parse(urlFoto);
+                    try {
+                        InputStream stream = getContext().getContentResolver().openInputStream(uri);
+                        Bitmap imageBitmap = BitmapFactory.decodeStream(stream);
+                        imageButton1.setImageBitmap(imageBitmap);
+                        agregarImagenGaleria();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
 
-        }else {
-            Log.d("ACTIVITY_RESULT", String.valueOf(resultCode));
+                }else {
+                    Log.d("ACTIVITY_RESULT", String.valueOf(resultCode));
+                }
+                break;
+            case SOLICITUD_SELECCIONAR_FOTO:
+                if(resultCode == Activity.RESULT_OK){
+                    Uri uri = Uri.parse(data.getData().toString());
+                    try {
+                        InputStream stream = getContext().getContentResolver().openInputStream(uri);
+                        Bitmap imageBitmap = BitmapFactory.decodeStream(stream);
+                        imageButton2.setImageBitmap(imageBitmap);
+                        agregarImagenGaleria();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
         }
+
+
     }
 
     public void agregarImagenGaleria(){
